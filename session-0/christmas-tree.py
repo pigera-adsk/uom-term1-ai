@@ -1,5 +1,7 @@
-##Christmas tree
 def christmas_tree(num):
+    """
+    Prints a christmas tree in given number of lines.
+    """
     for i in range(num):
         print(" "*(num-i-1)+"*"*(2*i+1))
 
