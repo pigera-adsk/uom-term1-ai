@@ -33,3 +33,7 @@ while i<=terminator:
     i=i+1 
 
 print(prime_fac)
+
+
+#Time Complexity O(n^0.5) (n=value)
+#Space Complexity O(1)

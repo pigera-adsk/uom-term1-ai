@@ -13,3 +13,7 @@ for i in range(length-digits):
         max_product = product
 
 print(max_product)
+
+
+#Time Complexity O(length*digits)
+#Space Complexity O(1)

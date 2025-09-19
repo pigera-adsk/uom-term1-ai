@@ -13,7 +13,7 @@ def is_prime(num):
 
     return True
 
-end = 1000000
+end = 2000000
 total = 2
 
 for i in range(3,end,2):
@@ -22,3 +22,6 @@ for i in range(3,end,2):
 
 print(total)
 
+
+#Time Complexity O(n^1.5) (n=end)
+#Space Complexity O(1)

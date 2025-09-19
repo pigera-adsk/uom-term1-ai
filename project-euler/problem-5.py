@@ -8,3 +8,7 @@ for i in range(end,0,-1):
         num = num*i//gcd(num,i)    
 
 print(num)
+
+
+#Time Complexity O(nlog(n)) (n=end)
+#Space Complexity O(1)

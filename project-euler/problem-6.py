@@ -9,3 +9,7 @@ square_of_sum = (int((1+end)*end/2))**2
 answer = square_of_sum - sum_of_squares
 
 print(answer)
+
+
+#Time Complexity O(n^2) (n=end)
+#Space Complexity O(1)

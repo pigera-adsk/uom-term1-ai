@@ -19,7 +19,7 @@ def is_prime(num):
 
 check = 1
 count = 0
-expected = 10001
+expected = 100000
 
 while count<expected :
     check = check + 1
@@ -27,3 +27,7 @@ while count<expected :
         count = count + 1
     
 print(check)
+
+
+#Time Complexity O((n.ln(n)^1.5) (n=expected)
+#Space Complexity O(1)

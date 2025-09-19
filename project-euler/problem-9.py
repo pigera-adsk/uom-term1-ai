@@ -13,3 +13,7 @@ while a<=expected_sum:
         a=a+1
         b = a+1
     b = b+1
+
+
+#Time Complexity O(n^2) (n=expected_sum)
+#Space Complexity O(1)
