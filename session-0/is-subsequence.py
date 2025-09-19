@@ -6,18 +6,21 @@ def is_subsequence(subs,mains):
     main_index = 0
 
     for sub_index in range(len(subs)):
+       
        main_index = mains.find(subs[sub_index],main_index)
+       #check if the relevent subsequence character occurs in the correct place of main string
+       
        if main_index == -1 :
            #character isn't found in order
            print("False")
            return False
+       
        main_index = main_index + 1 #skip last matching index
        
-    print("True")
     return True
 
 
 subs = input("Subsequence :")
 mains = input("Main sequence :")
 
-is_subsequence(subs,mains)
+print(is_subsequence(subs,mains))

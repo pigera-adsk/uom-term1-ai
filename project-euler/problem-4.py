@@ -1,3 +1,5 @@
+#Largest palindrome product of 3-digit numbers
+
 def check_palindrome(sequence):
     """
     Check if a given string is a palindrome
@@ -9,20 +11,22 @@ def check_palindrome(sequence):
     return False
 
 
+start = 100
 limit = 999
 
 num1 = limit
 num2 = limit
 multiplied = []
 
-while num1>=100:
-    while num2>=100:
+#Loop gets all products of 3-digit numbers
+while num1>=start:
+    while num2>=start:
         multiplied.append(num1*num2)
         num2 = num2-1
     num1 = num1 - 1
     num2 = num1
 
-multiplied.sort(reverse=True)
+multiplied.sort(reverse=True) #Sort products from largest to smallest
 
 for num in multiplied:
     if check_palindrome(str(num)):
@@ -30,5 +34,5 @@ for num in multiplied:
         break
 
 
-#Time Complexity O(n^4) (n=limit)
+#Time Complexity O(n^2) (n=limit-start)
 #Space Complexity O(n^2)

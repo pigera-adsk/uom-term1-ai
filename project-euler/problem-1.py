@@ -1,3 +1,5 @@
+#Sum of multiplies of 3 or 5 below 1000
+
 total = 0
 terminator = 1000
 

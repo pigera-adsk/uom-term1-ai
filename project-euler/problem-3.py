@@ -1,3 +1,5 @@
+#Largest prime factor of a given value
+
 def is_prime(num):
     """
     Check if the given number is a prime
@@ -24,12 +26,16 @@ prime_fac = None
 i = 1
 
 while i<=terminator:
-    if value%i == 0:
+    if value%i == 0: #Check for factors
+
         if is_prime(i):
+            #'i' keeps getting bigger in each iteration <= (value//i)
             prime_fac = i
+
         if is_prime(value//i):
+            #First execution of this condition guarantees the largest prime
             prime_fac = value//i
-            break
+            break 
     i=i+1 
 
 print(prime_fac)
