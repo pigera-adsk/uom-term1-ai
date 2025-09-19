@@ -1,3 +1,5 @@
+#Summation of primes upto 2,000,000
+
 def is_prime(num):
     """
     Check if the given integer(>2) is a prime

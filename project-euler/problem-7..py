@@ -1,3 +1,5 @@
+#Find the 10001st prime
+
 def is_prime(num):
     """
     Check if the given number is a prime
@@ -19,8 +21,9 @@ def is_prime(num):
 
 check = 1
 count = 0
-expected = 100000
+expected = 10001
 
+#Loops through integers counting prime numbers
 while count<expected :
     check = check + 1
     if is_prime(check):
