@@ -7,10 +7,8 @@ T = TypeVar("T", int, float)
 def chunks(iterable: Iterable[T], size: int) -> Iterator[list[T]]:
     """
     Yield lists of length `size` from `iterable`. Last chunk may be shorter.
-    TODO:
-      - Accumulate items into a buffer
-      - Yield buffer when size reached; clear and continue
     """
+
     buffer = list[T] = []
 
     for i in iterable:
@@ -19,8 +17,9 @@ def chunks(iterable: Iterable[T], size: int) -> Iterator[list[T]]:
         else :
           yield iter(buffer)
           buffer = []
-    # TODO: implement
+
     return iter(buffer)
+
 
 def moving_average(window: int):
     """
