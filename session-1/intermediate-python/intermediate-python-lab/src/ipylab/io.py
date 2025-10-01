@@ -27,9 +27,11 @@ def load_signal_csv(path: Path) -> list[float]:
 def save_features_csv(path: Path, rows: Iterable[Sequence[float]]) -> None:
     """
     Save a CSV with header: rms,zero_crossings,peak_to_peak,mad
-    TODO:
-      - Ensure parent dir exists (mkdir parents=True, exist_ok=True)
-      - Write header and rows via csv.writer
     """
-    # TODO: implement
-    pass
+    
+    path.mkdir(parents=True,exist_ok=True)
+
+    with open(path,'w',newline='') as writefile:
+        writer = csv.writer(writefile)
+        writer.writerow(['rms','zero_crossings','peak_to_peak','mad'])
+        writer.writerows(rows)
