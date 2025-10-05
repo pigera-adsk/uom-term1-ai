@@ -27,17 +27,24 @@ def moving_average(window: int):
     Usage:
         gen = moving_average(5); next(gen)
         out = gen.send(3.0)  # returns current average
-    TODO:
-      - Keep a deque(maxlen=window)
-      - On each .send(x): append x and yield average (sum/len)
     """
-    # TODO: implement
-    yield None
+
+    values = deque(maxlen=window)
+    average = None
+    while True:
+        new_value = yield average
+        values.append(new_value)
+        average = sum(values) / len(values)
+  
 
 def moving_median(window: int):
     """
     Stateful GENERATOR that yields the moving median each time a new value is sent.
-    TODO: mirror moving_average but compute statistics.median over the deque.
     """
-    # TODO: implement
-    yield None
+    
+    values = deque(maxlen=window)
+    med = None
+    while True:
+        new_value = yield med
+        values.append(new_value)
+        med = median(values)

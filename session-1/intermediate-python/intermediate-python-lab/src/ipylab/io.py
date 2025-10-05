@@ -17,9 +17,9 @@ def load_signal_csv(path: Path) -> list[float]:
               try:
                 data.append(float(row[0]))
               except ValueError :
-                 print(f"Non-numeric data found in row {len(data)+1}")
+                 logging.warning(f"Non-numeric data found in row {len(data)+1}")
     except FileNotFoundError :
-        print("File doesn't exist")
+        logging.warning("File doesn't exist")
 
     return data
 

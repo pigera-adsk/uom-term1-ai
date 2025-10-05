@@ -8,9 +8,19 @@ def feature_vector(x: np.ndarray) -> list[float]:
       - zero-crossings (count)
       - peak-to-peak (max - min)
       - mean absolute diff (MAD)
-    Use NumPy vectorized ops only.
     Return as [rms, zc, p2p, mad].
-    TODO: implement.
     """
-    # TODO: implement
-    return [0.0, 0.0, 0.0, 0.0]
+
+    arr_squared = x * x
+    mean_squared = np.mean(arr_squared)
+    rms = float(np.sqrt(mean_squared))
+
+    signs = np.sign(x)
+    sign_diff = np.diff(signs)
+    zc = np.count_nonzero(sign_diff)
+
+    p2p = x.max() - x.min()
+
+    mad = (np.abs(x-float(x.mean()))).mean()
+
+    return [rms, zc, p2p, mad]
