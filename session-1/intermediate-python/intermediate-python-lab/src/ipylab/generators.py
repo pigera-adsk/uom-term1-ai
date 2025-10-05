@@ -9,16 +9,15 @@ def chunks(iterable: Iterable[T], size: int) -> Iterator[list[T]]:
     Yield lists of length `size` from `iterable`. Last chunk may be shorter.
     """
 
-    buffer = list[T] = []
+    buffer : list[T] = []
 
-    for i in iterable:
-        if buffer < size:
-          buffer.append(i)
-        else :
-          yield iter(buffer)
-          buffer = []
-
-    return iter(buffer)
+    for item in iterable:
+        buffer.append(item)
+        if len(buffer) == size:
+            yield buffer
+            buffer = []
+    if buffer:
+        yield buffer
 
 
 def moving_average(window: int):
