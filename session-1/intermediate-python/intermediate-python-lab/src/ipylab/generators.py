@@ -10,7 +10,6 @@ def chunks(iterable: Iterable[T], size: int) -> Iterator[list[T]]:
     """
 
     buffer : list[T] = []
-
     for item in iterable:
         buffer.append(item)
         if len(buffer) == size:
