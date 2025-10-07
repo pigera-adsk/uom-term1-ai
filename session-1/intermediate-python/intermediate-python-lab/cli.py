@@ -4,8 +4,8 @@ from pathlib import Path
 import numpy as np
 import time
 
-from .io import load_signal_csv, save_features_csv
-from .features import feature_vector
+from src.ipylab.io import load_signal_csv, save_features_csv
+from src.ipylab.features import feature_vector
 
 app = typer.Typer(help="Intermediate Python Lab CLI")
 
